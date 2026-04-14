@@ -1,0 +1,1 @@
+# vendshop-template
