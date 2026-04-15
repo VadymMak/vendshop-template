@@ -1,8 +1,10 @@
 import { SITE_CONFIG } from '@/lib/config';
 import { NAV_ITEMS, CONTACT_ITEMS } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const ui = t();
   const year = new Date().getFullYear();
 
   return (
@@ -13,7 +15,7 @@ export default function Footer() {
           <div className={styles.logo}>{SITE_CONFIG.name}</div>
           <p className={styles.tagline}>{SITE_CONFIG.tagline}</p>
           <p className={styles.copy}>
-            Vytvorené cez{' '}
+            {ui.footer.poweredBy}{' '}
             <a href="https://vendshop.sk" target="_blank" rel="noopener noreferrer" className={styles.vsLink}>
               VendShop
             </a>
@@ -59,7 +61,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className="container">
-          <span>© {year} {SITE_CONFIG.name}. Všetky práva vyhradené.</span>
+          <span>© {year} {SITE_CONFIG.name}. {ui.footer.rights}</span>
           <div className={styles.bottomLinks}>
             <a href="#">Ochrana súkromia</a>
             <a href="#">Cookies</a>

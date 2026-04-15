@@ -1,6 +1,8 @@
 // Palette presets
 export type PalettePreset = 'dark-premium' | 'clean-light' | 'warm-cozy' | 'professional' | 'natural' | 'medical';
 
+export type SiteLanguage = 'sk' | 'en' | 'de' | 'cs' | 'uk' | 'ru';
+
 export interface PaletteColors {
   primary: string;
   primaryDark: string;
@@ -24,6 +26,7 @@ export interface SiteConfig {
   tagline: string;
   templateType: 'services' | 'schedule' | 'menu' | 'portfolio';
   palette: PalettePreset;   // только пресет, не ручные цвета
+  language: SiteLanguage;
   headingFont: 'oswald' | 'playfair' | 'cormorant' | 'inter';
   whatsappNumber: string;
   contactEmail: string;

@@ -19,6 +19,7 @@ export const SITE_CONFIG: SiteConfig = {
   tagline: 'Kvety pre každú príležitosť',  // Подзаголовок
   templateType: 'services',               // 'services' | 'schedule' | 'menu' | 'portfolio'
   palette: 'warm-cozy',                   // см. пресеты ниже
+  language: 'sk',                         // 'sk' | 'en' | 'de' | 'cs' | 'uk' | 'ru'
   headingFont: 'playfair',               // 'oswald' | 'playfair' | 'cormorant' | 'inter'
   whatsappNumber: '421901234567',
   contactEmail: 'info@bloomshop.sk',

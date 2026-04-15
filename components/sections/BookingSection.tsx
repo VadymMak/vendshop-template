@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { SERVICE_CATEGORIES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './BookingSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
@@ -14,6 +15,7 @@ interface FormData {
 }
 
 export default function BookingSection() {
+  const ui = t();
   const [form, setForm] = useState<FormData>({
     name: '',
     phone: '',
@@ -42,12 +44,8 @@ export default function BookingSection() {
       <div className="container">
         <div className={styles.layout}>
           <ScrollReveal animation="fadeLeft" className={styles.info}>
-            <h2 className="section-title">
-              Rezervujte si <span>termín</span>
-            </h2>
-            <p className="section-subtitle">
-              Vyplňte formulár a my vás kontaktujeme s potvrdením do 24 hodín.
-            </p>
+            <h2 className="section-title">{ui.booking.title}</h2>
+            <p className="section-subtitle">{ui.booking.subtitle}</p>
             <ul className={styles.benefits}>
               <li>✅ Rýchla odpoveď do 24 hodín</li>
               <li>✅ Bez záväzkov — rezervácia je bezplatná</li>
@@ -60,17 +58,16 @@ export default function BookingSection() {
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✅</div>
-                <h3>Rezervácia odoslaná!</h3>
-                <p>Kontaktujeme vás čo najskôr pre potvrdenie termínu.</p>
+                <h3>{ui.booking.success}</h3>
                 <button className="btn btn--outline" onClick={() => setSubmitted(false)}>
-                  Nová rezervácia
+                  {ui.booking.title}
                 </button>
               </div>
             ) : (
               <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.row}>
                   <div className="form-group">
-                    <label htmlFor="name">Meno a priezvisko *</label>
+                    <label htmlFor="name">{ui.booking.name} *</label>
                     <input
                       id="name"
                       name="name"
@@ -83,7 +80,7 @@ export default function BookingSection() {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="phone">Telefón *</label>
+                    <label htmlFor="phone">{ui.booking.phone} *</label>
                     <input
                       id="phone"
                       name="phone"
@@ -99,7 +96,7 @@ export default function BookingSection() {
 
                 <div className={styles.row}>
                   <div className="form-group">
-                    <label htmlFor="service">Typ služby *</label>
+                    <label htmlFor="service">{ui.booking.service} *</label>
                     <select
                       id="service"
                       name="service"
@@ -117,7 +114,7 @@ export default function BookingSection() {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="date">Preferovaný dátum</label>
+                    <label htmlFor="date">{ui.booking.date}</label>
                     <input
                       id="date"
                       name="date"
@@ -143,7 +140,7 @@ export default function BookingSection() {
                 </div>
 
                 <button type="submit" className={`btn btn--primary ${styles.submit}`}>
-                  Odoslať rezerváciu
+                  {ui.booking.submit}
                 </button>
               </form>
             )}

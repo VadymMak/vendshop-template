@@ -1,19 +1,17 @@
 import { WHY_ITEMS } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './WhyUsSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function WhyUsSection() {
+  const ui = t();
   return (
     <section id="why-us" className={`section ${styles.section}`}>
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Prečo <span>nás</span>
-            </h2>
-            <p className="section-subtitle">
-              Vybrali si nás tisíce spokojných zákazníkov. Tu je dôvod.
-            </p>
+            <h2 className="section-title">{ui.whyUs.title}</h2>
+            <p className="section-subtitle">{ui.whyUs.subtitle}</p>
           </div>
         </ScrollReveal>
 

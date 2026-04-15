@@ -88,7 +88,7 @@ export default function RootLayout({
   const bodyClass = fontClassMap[headingFont] ?? 'font-oswald';
 
   return (
-    <html lang="sk" className={fontVariables} style={cssVars}>
+    <html lang={SITE_CONFIG.language} className={fontVariables} style={cssVars}>
       <body className={bodyClass} data-theme={palette.isDark ? 'dark' : 'light'}>{children}</body>
     </html>
   );

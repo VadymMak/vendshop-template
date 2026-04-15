@@ -1,18 +1,18 @@
 import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './GallerySection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function GallerySection() {
+  const ui = t();
   return (
     <section id="gallery" className={`section section--alt ${styles.section}`}>
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Naša <span>Galéria</span>
-            </h2>
-            <p className="section-subtitle">Pohľad do zákulisia našej práce.</p>
+            <h2 className="section-title">{ui.gallery.title}</h2>
+            <p className="section-subtitle">{ui.gallery.subtitle}</p>
           </div>
         </ScrollReveal>
 

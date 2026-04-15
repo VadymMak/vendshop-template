@@ -1,17 +1,17 @@
 import { CONTACT_ITEMS, FAQ_ITEMS } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './ContactSection.module.css';
 import FaqAccordion from './FaqAccordion';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function ContactSection() {
+  const ui = t();
   return (
     <section id="contact" className={`section ${styles.section}`}>
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Kontakt <span>&amp; FAQ</span>
-            </h2>
+            <h2 className="section-title">{ui.contact.title}</h2>
             <p className="section-subtitle">Nájdete nás tu alebo nám napíšte.</p>
           </div>
         </ScrollReveal>
@@ -52,7 +52,7 @@ export default function ContactSection() {
 
           {/* FAQ */}
           <ScrollReveal delay={200} animation="fadeLeft">
-            <h3 className={styles.faqTitle}>Často kladené otázky</h3>
+            <h3 className={styles.faqTitle}>{ui.faq.title}</h3>
             <FaqAccordion items={FAQ_ITEMS} />
           </ScrollReveal>
         </div>

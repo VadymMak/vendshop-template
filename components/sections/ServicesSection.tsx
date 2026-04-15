@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import { SERVICE_CATEGORIES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './ServicesSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function ServicesSection() {
+  const ui = t();
   const [activeTab, setActiveTab] = useState(SERVICE_CATEGORIES[0]?.id ?? '');
 
   const activeCategory = SERVICE_CATEGORIES.find((c) => c.id === activeTab);
@@ -15,12 +17,8 @@ export default function ServicesSection() {
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Naše <span>Služby</span>
-            </h2>
-            <p className="section-subtitle">
-              Profesionálny servis so zárukou kvality pre každé vozidlo.
-            </p>
+            <h2 className="section-title">{ui.services.title}</h2>
+            <p className="section-subtitle">{ui.services.subtitle}</p>
           </div>
         </ScrollReveal>
 

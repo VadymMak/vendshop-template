@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { SITE_CONFIG } from '@/lib/config';
 import { CHAT_CONFIG } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './ChatWidget.module.css';
 
 interface Message {
@@ -12,9 +13,10 @@ interface Message {
 }
 
 export default function ChatWidget() {
+  const ui = t();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { id: 0, from: 'bot', text: CHAT_CONFIG.greeting },
+    { id: 0, from: 'bot', text: ui.chat.greeting },
   ]);
   const [input, setInput] = useState('');
   const [quickRepliesUsed, setQuickRepliesUsed] = useState<Set<string>>(new Set());
@@ -39,7 +41,7 @@ export default function ChatWidget() {
     if (!text) return;
     setInput('');
     addMessage('user', text);
-    setTimeout(() => addMessage('bot', CHAT_CONFIG.fallbackResponse), 500);
+    setTimeout(() => addMessage('bot', ui.chat.fallback), 500);
   };
 
   const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {

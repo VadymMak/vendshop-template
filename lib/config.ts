@@ -5,6 +5,7 @@ export const SITE_CONFIG: SiteConfig = {
   tagline: 'Váš spoľahlivý autoservis',
   templateType: 'services',
   palette: 'professional',
+  language: 'sk',
   headingFont: 'oswald',
   whatsappNumber: '421321234567',
   contactEmail: 'info@example.com',

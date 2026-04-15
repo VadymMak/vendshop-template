@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import { SITE_CONFIG } from '@/lib/config';
 import { IMAGES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
+  const ui = t();
   return (
     <section id="hero" className={styles.hero}>
       {/* Background image */}
@@ -30,10 +32,10 @@ export default function HeroSection() {
         </p>
         <div className={styles.ctas}>
           <a href="#booking" className="btn btn--primary">
-            Rezervovať termín
+            {ui.hero.cta1}
           </a>
           <a href="#services" className="btn btn--outline">
-            Naše služby
+            {ui.hero.cta2}
           </a>
         </div>
       </div>
