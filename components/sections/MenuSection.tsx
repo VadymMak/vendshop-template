@@ -12,14 +12,14 @@ export default function MenuSection() {
   return (
     <section id="menu" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <h2 className="section-title">
             Naše <span>Menu</span>
           </h2>
           <p className="section-subtitle">Čerstvé ingrediencie, tradičné recepty a moderná kuchyňa.</p>
         </div>
 
-        <div className={styles.tabs}>
+        <div className={`${styles.tabs} reveal reveal-delay-1`}>
           {MENU_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -31,7 +31,7 @@ export default function MenuSection() {
           ))}
         </div>
 
-        <div className={styles.list}>
+        <div className={`${styles.list} reveal reveal-delay-2`}>
           {activeCategory?.items.map((item) => (
             <div key={item.id} className={`card ${styles.item}`}>
               <div className={styles.info}>

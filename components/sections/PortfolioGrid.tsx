@@ -13,14 +13,14 @@ export default function PortfolioGrid() {
   return (
     <section id="portfolio" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <h2 className="section-title">
             Naše <span>Práce</span>
           </h2>
           <p className="section-subtitle">Výber z našich realizovaných projektov.</p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={`${styles.grid} reveal reveal-delay-1`}>
           {allImages.map((src, i) => (
             <button
               key={i}
