@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Oswald, Playfair_Display, Cormorant_Garamond, Inter } from 'next/font/google';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/config';
+import { getPalette } from '@/lib/palettes';
 // Load all 4 heading font options
 const oswald = Oswald({
   subsets: ['latin'],
@@ -54,7 +55,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { palette, headingFont } = SITE_CONFIG;
+  const { headingFont } = SITE_CONFIG;
+  const palette = getPalette(SITE_CONFIG.palette);
 
   // Inject palette as CSS variables
   const cssVars: React.CSSProperties & Record<string, string> = {
@@ -68,7 +70,11 @@ export default function RootLayout({
     '--text': palette.text,
     '--text-muted': palette.textMuted,
     '--border': palette.border,
-    '--text-on-primary': palette.textOnPrimary,
+    '--stats-bg': palette.statsBg,
+    '--stats-text': palette.statsText,
+    '--hero-overlay': palette.heroOverlay,
+    '--chat-toggle-bg': palette.isDark ? palette.card : palette.primary,
+    '--chat-toggle-color': palette.isDark ? palette.text : '#ffffff',
     '--heading-font': fontVarMap[headingFont] ?? fontVarMap.oswald,
   };
 
@@ -83,7 +89,7 @@ export default function RootLayout({
 
   return (
     <html lang="sk" className={fontVariables} style={cssVars}>
-      <body className={bodyClass}>{children}</body>
+      <body className={bodyClass} data-theme={palette.isDark ? 'dark' : 'light'}>{children}</body>
     </html>
   );
 }

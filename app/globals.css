@@ -17,7 +17,18 @@
   --text-muted: #9CA3AF;
   --border: rgba(255, 255, 255, 0.08);
 
-  /* Text on primary-colored backgrounds */
+  /* Stats bar (theme-specific, overridden by layout.tsx) */
+  --stats-bg: #F97316;
+  --stats-text: #FFFFFF;
+
+  /* Hero overlay (theme-specific, overridden by layout.tsx) */
+  --hero-overlay: rgba(0, 0, 0, 0.55);
+
+  /* Chat toggle (theme-specific, overridden by layout.tsx) */
+  --chat-toggle-bg: #1F2937;
+  --chat-toggle-color: #F9FAFB;
+
+  /* Text on primary-colored backgrounds (fixed — always white) */
   --text-on-primary: #fff;
   --text-on-primary-dim: color-mix(in srgb, var(--text-on-primary) 80%, transparent);
   --text-on-primary-faint: color-mix(in srgb, var(--text-on-primary) 20%, transparent);

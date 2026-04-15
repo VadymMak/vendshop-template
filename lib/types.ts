@@ -1,21 +1,29 @@
+// Palette presets
+export type PalettePreset = 'dark-premium' | 'clean-light' | 'warm-cozy' | 'professional' | 'natural' | 'medical';
+
+export interface PaletteColors {
+  primary: string;
+  primaryDark: string;
+  primaryLight: string;
+  bg: string;
+  bgAlt: string;
+  card: string;
+  cardHover: string;
+  text: string;
+  textMuted: string;
+  border: string;
+  statsBg: string;       // фон stats bar
+  statsText: string;     // текст stats bar
+  heroOverlay: string;   // overlay для hero (всегда тёмный)
+  isDark: boolean;       // тёмная тема или светлая
+}
+
 // Site configuration
 export interface SiteConfig {
   name: string;
   tagline: string;
   templateType: 'services' | 'schedule' | 'menu' | 'portfolio';
-  palette: {
-    primary: string;       // main accent color
-    primaryDark: string;
-    primaryLight: string;
-    bg: string;            // main background
-    bgAlt: string;         // alternate section bg
-    card: string;          // card background
-    cardHover: string;
-    text: string;          // main text
-    textMuted: string;     // secondary text
-    border: string;        // border color
-    textOnPrimary: string; // text color on primary-colored backgrounds
-  };
+  palette: PalettePreset;   // только пресет, не ручные цвета
   headingFont: 'oswald' | 'playfair' | 'cormorant' | 'inter';
   whatsappNumber: string;
   contactEmail: string;

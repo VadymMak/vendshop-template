@@ -15,26 +15,28 @@ pnpm install
 
 ```ts
 export const SITE_CONFIG: SiteConfig = {
-  name: 'BloomShop',                    // Название сайта
-  tagline: 'Kvety pre každú príležitosť', // Подзаголовок
-  templateType: 'services',             // 'services' | 'schedule' | 'menu' | 'portfolio'
-  palette: {
-    primary: '#E91E8C',                 // Основной акцентный цвет
-    primaryDark: '#C2185B',
-    primaryLight: '#F06292',
-    bg: '#0A0A12',                      // Фон страницы
-    bgAlt: '#12121F',
-    card: '#1A1A2E',
-    cardHover: '#22223B',
-    text: '#F8F8FF',
-    textMuted: '#9E9EBF',
-    border: 'rgba(233,30,140,0.15)',
-  },
-  headingFont: 'playfair',             // 'oswald' | 'playfair' | 'cormorant' | 'inter'
+  name: 'BloomShop',                       // Название сайта
+  tagline: 'Kvety pre každú príležitosť',  // Подзаголовок
+  templateType: 'services',               // 'services' | 'schedule' | 'menu' | 'portfolio'
+  palette: 'warm-cozy',                   // см. пресеты ниже
+  headingFont: 'playfair',               // 'oswald' | 'playfair' | 'cormorant' | 'inter'
   whatsappNumber: '421901234567',
   contactEmail: 'info@bloomshop.sk',
 };
 ```
+
+### Доступные пресеты палитр
+
+| Пресет | Тема | Описание |
+|--------|------|----------|
+| `'dark-premium'` | Тёмная | Золото на чёрном — ювелирные, премиум |
+| `'clean-light'` | Светлая | Зелёный на белом — магазины, сервисы |
+| `'warm-cozy'` | Светлая | Тёплые тона — кафе, флористика, спа |
+| `'professional'` | Тёмная | Оранжевый акцент — авто, техника |
+| `'natural'` | Светлая | Тёмно-зелёный — эко, здоровье, природа |
+| `'medical'` | Светлая | Синий на белом — клиники, аптеки |
+
+Чтобы сменить палитру — измени **одну строку** `palette: 'название-пресета'`.
 
 ## 3. Открой `lib/constants.ts` — замени данные
 
@@ -113,16 +115,22 @@ git push
 
 ## CSS-переменные (не хардкодить!)
 
-Все компоненты используют CSS-переменные из `globals.css`:
+Все компоненты используют CSS-переменные, автоматически заполняемые из `SITE_CONFIG.palette` через `layout.tsx`:
 
 ```css
 var(--primary)       /* акцентный цвет */
+var(--primary-dark)  /* акцент при hover */
 var(--bg)            /* фон */
 var(--bg-alt)        /* альтернативный фон секций */
 var(--card)          /* фон карточек */
+var(--card-hover)    /* фон карточек при hover */
 var(--text)          /* основной текст */
 var(--text-muted)    /* вспомогательный текст */
 var(--border)        /* цвет рамок */
+var(--stats-bg)      /* фон полосы статистики */
+var(--stats-text)    /* текст полосы статистики */
+var(--hero-overlay)  /* overlay на hero-фото */
 ```
 
-Переменные автоматически заполняются из `SITE_CONFIG.palette` через `layout.tsx`.
+Цвета каждого пресета протестированы на достаточный контраст (WCAG AA).
+Детали пресетов — в `lib/palettes.ts`.
