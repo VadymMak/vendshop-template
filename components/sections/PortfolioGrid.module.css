@@ -26,7 +26,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,12 +34,12 @@
 }
 
 .item:hover .overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay-xl);
 }
 
 .zoomIcon {
   font-size: 2rem;
-  color: #fff;
+  color: var(--text);
   opacity: 0;
   transition: opacity var(--transition);
   line-height: 1;
@@ -54,7 +54,7 @@
   position: fixed;
   inset: 0;
   z-index: 200;
-  background: rgba(0, 0, 0, 0.92);
+  background: var(--overlay-3xl);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
   right: 1.5rem;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--text);
   font-size: 1.75rem;
   z-index: 201;
   cursor: pointer;

@@ -18,9 +18,9 @@
   z-index: 1;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.4) 60%,
-    rgba(0, 0, 0, 0.15) 100%
+    var(--overlay-2xl) 0%,
+    var(--overlay-lg) 60%,
+    var(--overlay-sm) 100%
   );
 }
 
@@ -51,7 +51,7 @@
 
 .sub {
   font-size: var(--font-size-lg);
-  color: rgba(249, 250, 251, 0.8);
+  color: var(--text-dim);
   max-width: 520px;
   line-height: 1.6;
   margin-bottom: var(--spacing-md);

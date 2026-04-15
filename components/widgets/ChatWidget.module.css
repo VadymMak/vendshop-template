@@ -13,13 +13,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px var(--shadow-md);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .toggle:hover {
   transform: scale(1.08);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 24px var(--shadow-lg);
 }
 
 .panel {
@@ -32,7 +32,7 @@
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 40px var(--shadow-lg);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -51,7 +51,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--text-on-primary-faint);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,12 +62,12 @@
 .botName {
   font-weight: 700;
   font-size: var(--font-size-sm);
-  color: #fff;
+  color: var(--text-on-primary);
 }
 
 .status {
   font-size: var(--font-size-xs);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-on-primary-dim);
 }
 
 .messages {
@@ -98,7 +98,7 @@
 
 .msgUser {
   background: var(--primary);
-  color: #fff;
+  color: var(--text-on-primary);
   border-bottom-right-radius: 2px;
   align-self: flex-end;
 }
@@ -123,7 +123,7 @@
 
 .qBtn:hover {
   background: var(--primary);
-  color: #fff;
+  color: var(--text-on-primary);
 }
 
 .inputRow {
@@ -162,7 +162,7 @@
   border-radius: 50%;
   background: var(--primary);
   border: none;
-  color: #fff;
+  color: var(--text-on-primary);
   font-size: 0.9rem;
   display: flex;
   align-items: center;

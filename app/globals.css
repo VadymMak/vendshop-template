@@ -17,6 +17,36 @@
   --text-muted: #9CA3AF;
   --border: rgba(255, 255, 255, 0.08);
 
+  /* Text on primary-colored backgrounds */
+  --text-on-primary: #fff;
+  --text-on-primary-dim: color-mix(in srgb, var(--text-on-primary) 80%, transparent);
+  --text-on-primary-faint: color-mix(in srgb, var(--text-on-primary) 20%, transparent);
+
+  /* Dark overlays (for image overlays, lightboxes) */
+  --overlay-sm: rgba(0, 0, 0, 0.15);
+  --overlay-md: rgba(0, 0, 0, 0.2);
+  --overlay-lg: rgba(0, 0, 0, 0.4);
+  --overlay-xl: rgba(0, 0, 0, 0.5);
+  --overlay-2xl: rgba(0, 0, 0, 0.75);
+  --overlay-3xl: rgba(0, 0, 0, 0.92);
+
+  /* Shadow colors */
+  --shadow-sm: rgba(0, 0, 0, 0.35);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+
+  /* WhatsApp brand (fixed, not theme-dependent) */
+  --whatsapp: #25D366;
+  --whatsapp-shadow: rgba(37, 211, 102, 0.45);
+  --whatsapp-shadow-hover: rgba(37, 211, 102, 0.6);
+  --whatsapp-shadow-pulse: rgba(37, 211, 102, 0.75);
+
+  /* Header glass effect */
+  --header-bg: color-mix(in srgb, var(--bg) 90%, transparent);
+
+  /* Hero text dim */
+  --text-dim: color-mix(in srgb, var(--text) 80%, transparent);
+
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
@@ -130,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 .card:hover {
   background: var(--card-hover);
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px var(--shadow-sm);
 }
 
 /* ── Buttons ─────────────────────────────────────────────── */
@@ -152,13 +182,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn--primary {
   background: var(--primary);
-  color: #fff;
+  color: var(--text-on-primary);
 }
 
 .btn--primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 20px var(--shadow-md);
 }
 
 .btn--outline {
