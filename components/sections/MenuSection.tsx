@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { MENU_CATEGORIES } from '@/lib/constants';
 import styles from './MenuSection.module.css';
+import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function MenuSection() {
   const [activeTab, setActiveTab] = useState(MENU_CATEGORIES[0]?.id ?? '');
@@ -12,14 +13,16 @@ export default function MenuSection() {
   return (
     <section id="menu" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header reveal">
-          <h2 className="section-title">
-            Naše <span>Menu</span>
-          </h2>
-          <p className="section-subtitle">Čerstvé ingrediencie, tradičné recepty a moderná kuchyňa.</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">
+              Naše <span>Menu</span>
+            </h2>
+            <p className="section-subtitle">Čerstvé ingrediencie, tradičné recepty a moderná kuchyňa.</p>
+          </div>
+        </ScrollReveal>
 
-        <div className={`${styles.tabs} reveal reveal-delay-1`}>
+        <ScrollReveal delay={100} className={styles.tabs}>
           {MENU_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -29,9 +32,9 @@ export default function MenuSection() {
               {cat.name}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
-        <div className={`${styles.list} reveal reveal-delay-2`}>
+        <ScrollReveal delay={200} className={styles.list}>
           {activeCategory?.items.map((item) => (
             <div key={item.id} className={`card ${styles.item}`}>
               <div className={styles.info}>
@@ -41,7 +44,7 @@ export default function MenuSection() {
               <span className={styles.price}>{item.price}</span>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

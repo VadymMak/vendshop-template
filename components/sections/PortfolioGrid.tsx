@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
 import styles from './PortfolioGrid.module.css';
+import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function PortfolioGrid() {
   const [lightbox, setLightbox] = useState<string | null>(null);
@@ -13,14 +14,16 @@ export default function PortfolioGrid() {
   return (
     <section id="portfolio" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header reveal">
-          <h2 className="section-title">
-            Naše <span>Práce</span>
-          </h2>
-          <p className="section-subtitle">Výber z našich realizovaných projektov.</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">
+              Naše <span>Práce</span>
+            </h2>
+            <p className="section-subtitle">Výber z našich realizovaných projektov.</p>
+          </div>
+        </ScrollReveal>
 
-        <div className={`${styles.grid} reveal reveal-delay-1`}>
+        <ScrollReveal delay={100} className={styles.grid}>
           {allImages.map((src, i) => (
             <button
               key={i}
@@ -40,7 +43,7 @@ export default function PortfolioGrid() {
               </div>
             </button>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* Lightbox */}

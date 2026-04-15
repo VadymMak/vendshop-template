@@ -1,24 +1,27 @@
 import Image from 'next/image';
 import { IMAGES } from '@/lib/constants';
 import styles from './GallerySection.module.css';
+import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function GallerySection() {
   return (
     <section id="gallery" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header reveal">
-          <h2 className="section-title">
-            Naša <span>Galéria</span>
-          </h2>
-          <p className="section-subtitle">Pohľad do zákulisia našej práce.</p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">
+              Naša <span>Galéria</span>
+            </h2>
+            <p className="section-subtitle">Pohľad do zákulisia našej práce.</p>
+          </div>
+        </ScrollReveal>
 
         <div className={styles.grid}>
           {IMAGES.gallery.map((src, i) => (
-            <div
+            <ScrollReveal
               key={i}
-              className={`${styles.item} ${i === 0 ? styles.featured : ''} reveal`}
-              style={{ transitionDelay: `${i * 0.08}s` }}
+              delay={i * 80}
+              className={`${styles.item} ${i === 0 ? styles.featured : ''}`}
             >
               <Image
                 src={src}
@@ -27,7 +30,7 @@ export default function GallerySection() {
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

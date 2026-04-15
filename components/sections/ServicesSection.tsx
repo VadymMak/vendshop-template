@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { SERVICE_CATEGORIES } from '@/lib/constants';
 import styles from './ServicesSection.module.css';
+import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState(SERVICE_CATEGORIES[0]?.id ?? '');
@@ -12,17 +13,19 @@ export default function ServicesSection() {
   return (
     <section id="services" className={`section section--alt ${styles.section}`}>
       <div className="container">
-        <div className="section-header reveal">
-          <h2 className="section-title">
-            Naše <span>Služby</span>
-          </h2>
-          <p className="section-subtitle">
-            Profesionálny servis so zárukou kvality pre každé vozidlo.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="section-header">
+            <h2 className="section-title">
+              Naše <span>Služby</span>
+            </h2>
+            <p className="section-subtitle">
+              Profesionálny servis so zárukou kvality pre každé vozidlo.
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Tabs */}
-        <div className={`${styles.tabs} reveal reveal-delay-1`}>
+        <ScrollReveal delay={100} className={styles.tabs}>
           {SERVICE_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -32,10 +35,10 @@ export default function ServicesSection() {
               {cat.name}
             </button>
           ))}
-        </div>
+        </ScrollReveal>
 
         {/* Cards */}
-        <div className={`${styles.grid} reveal reveal-delay-2`}>
+        <ScrollReveal delay={200} className={styles.grid}>
           {activeCategory?.items.map((item) => (
             <div key={item.id} className={`card ${styles.card}`}>
               <div className={styles.icon}>{item.icon}</div>
@@ -44,7 +47,7 @@ export default function ServicesSection() {
               <span className={styles.price}>{item.price}</span>
             </div>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
