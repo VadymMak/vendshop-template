@@ -15,6 +15,7 @@ export const SITE_CONFIG: SiteConfig = {
     text: '#F9FAFB',
     textMuted: '#9CA3AF',
     border: 'rgba(255,255,255,0.08)',
+    textOnPrimary: '#ffffff',
   },
   headingFont: 'oswald',
   whatsappNumber: '421321234567',
