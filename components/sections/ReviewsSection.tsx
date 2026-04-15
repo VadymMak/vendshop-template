@@ -5,7 +5,7 @@ export default function ReviewsSection() {
   return (
     <section id="reviews" className={`section ${styles.section}`}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header reveal">
           <h2 className="section-title">
             Čo hovoria <span>zákazníci</span>
           </h2>
@@ -15,8 +15,12 @@ export default function ReviewsSection() {
         </div>
 
         <div className={styles.grid}>
-          {REVIEWS.map((review) => (
-            <div key={review.id} className={`card ${styles.card}`}>
+          {REVIEWS.map((review, i) => (
+            <div
+              key={review.id}
+              className={`card ${styles.card} reveal`}
+              style={{ transitionDelay: `${i * 0.1}s` }}
+            >
               <div className="stars">{'★'.repeat(review.rating)}</div>
               <p className={styles.text}>&ldquo;{review.text}&rdquo;</p>
               <div className={styles.footer}>

@@ -5,8 +5,12 @@ export default function StatsBar() {
   return (
     <section className={styles.bar}>
       <div className={`container ${styles.grid}`}>
-        {STATS.map((stat) => (
-          <div key={stat.label} className={styles.item}>
+        {STATS.map((stat, i) => (
+          <div
+            key={stat.label}
+            className={`${styles.item} reveal`}
+            style={{ transitionDelay: `${i * 0.1}s` }}
+          >
             <span className={styles.value}>{stat.value}</span>
             <span className={styles.label}>{stat.label}</span>
           </div>

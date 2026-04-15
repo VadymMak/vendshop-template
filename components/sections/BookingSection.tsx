@@ -40,7 +40,7 @@ export default function BookingSection() {
     <section id="booking" className={`section section--alt ${styles.section}`}>
       <div className="container">
         <div className={styles.layout}>
-          <div className={styles.info}>
+          <div className={`${styles.info} reveal`}>
             <h2 className="section-title">
               Rezervujte si <span>termín</span>
             </h2>
@@ -55,7 +55,7 @@ export default function BookingSection() {
             </ul>
           </div>
 
-          <div className={styles.formWrap}>
+          <div className={`${styles.formWrap} reveal reveal-delay-2`}>
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✅</div>
