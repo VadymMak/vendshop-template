@@ -4,7 +4,28 @@
   inset-inline: 0;
   z-index: 100;
   height: var(--header-h);
-  transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+  transform: translateY(0);
+  transition: transform 0.3s ease, background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+/* Over hero (not yet scrolled) — force readable colors on dark image */
+.header:not(.scrolled) .logo {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+.header:not(.scrolled) .navLink {
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+.header:not(.scrolled) .navLink:hover {
+  color: #fff;
+}
+.header:not(.scrolled) .burger span {
+  background: #fff;
 }
 
 .scrolled {

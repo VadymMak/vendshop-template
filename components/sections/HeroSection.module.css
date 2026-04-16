@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: var(--hero-overlay);
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.15));
 }
 
 .content {
@@ -27,10 +27,21 @@
   max-width: 680px;
 }
 
+.panel {
+  display: inline-block;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  max-width: 100%;
+}
+
 .eyebrow {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--primary);
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: var(--spacing-xs);
@@ -38,18 +49,20 @@
 
 .title {
   font-size: var(--font-size-3xl);
-  color: var(--text);
+  color: #fff;
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 
 .sub {
   font-size: var(--font-size-lg);
-  color: var(--text-dim);
+  color: rgba(255,255,255,0.92);
   max-width: 520px;
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
 }
 
 .ctas {
@@ -62,6 +75,11 @@
   .content {
     max-width: 100%;
     text-align: center;
+  }
+
+  .panel {
+    display: block;
+    padding: 1.25rem;
   }
 
   .ctas {

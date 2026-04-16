@@ -25,18 +25,16 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className={`container ${styles.content}`}>
-        <p className={styles.eyebrow}>{SITE_CONFIG.name}</p>
-        <h1 className={styles.title}>{SITE_CONFIG.tagline}</h1>
-        <p className={styles.sub}>
-          Profesionálne služby, ktorým môžete dôverovať. Kvalita a spoľahlivosť na prvom mieste.
-        </p>
-        <div className={styles.ctas}>
-          <a href="#booking" className="btn btn--primary">
-            {ui.hero.cta1}
-          </a>
-          <a href="#services" className="btn btn--outline">
-            {ui.hero.cta2}
-          </a>
+        <div className={styles.panel}>
+          <p className={styles.eyebrow}>{SITE_CONFIG.name}</p>
+          <h1 className={styles.title}>{SITE_CONFIG.tagline}</h1>
+          <p className={styles.sub}>
+            Profesionálne služby, ktorým môžete dôverovať. Kvalita a spoľahlivosť na prvom mieste.
+          </p>
+          <div className={styles.ctas}>
+            <a href="#booking" className="btn btn--primary">{ui.hero.cta1}</a>
+            <a href="#services" className="btn btn--outline-light">{ui.hero.cta2}</a>
+          </div>
         </div>
       </div>
     </section>

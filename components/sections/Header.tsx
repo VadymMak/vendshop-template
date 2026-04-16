@@ -1,22 +1,28 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { SITE_CONFIG } from '@/lib/config';
 import { NAV_ITEMS } from '@/lib/constants';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 60);
-  }, []);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 40);
+      if (currentY < 64) setVisible(true);
+      else if (currentY > lastScrollY.current + 5) setVisible(false);
+      else if (currentY < lastScrollY.current - 5) setVisible(true);
+      lastScrollY.current = currentY;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -31,7 +37,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${visible ? '' : styles.hidden}`}>
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
         <a href="#hero" className={styles.logo} onClick={(e) => handleNavClick(e, '#hero')}>
