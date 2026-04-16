@@ -14,18 +14,18 @@
 
 /* Over hero (not yet scrolled) — force readable colors on dark image */
 .header:not(.scrolled) .logo {
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  color: var(--hero-text);
+  text-shadow: 0 2px 8px var(--shadow-lg);
 }
 .header:not(.scrolled) .navLink {
-  color: rgba(255,255,255,0.92);
-  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  color: var(--hero-text-dim);
+  text-shadow: 0 1px 4px var(--shadow-lg);
 }
 .header:not(.scrolled) .navLink:hover {
-  color: #fff;
+  color: var(--hero-text);
 }
 .header:not(.scrolled) .burger span {
-  background: #fff;
+  background: var(--hero-text);
 }
 
 .scrolled {

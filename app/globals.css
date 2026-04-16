@@ -24,6 +24,18 @@
   /* Hero overlay (theme-specific, overridden by layout.tsx) */
   --hero-overlay: rgba(0, 0, 0, 0.55);
 
+  /* Hero — forced-white text layer (not theme-dependent) */
+  --hero-text: #fff;
+  --hero-text-dim: rgba(255, 255, 255, 0.92);
+  --hero-text-faint: rgba(255, 255, 255, 0.85);
+  --hero-panel-bg: rgba(0, 0, 0, 0.35);
+  --hero-overlay-bottom: rgba(0, 0, 0, 0.65);
+  --hero-overlay-mid: rgba(0, 0, 0, 0.25);
+
+  /* Button outline-light variant (for use on dark/image backgrounds) */
+  --btn-outline-light-border: rgba(255, 255, 255, 0.7);
+  --btn-outline-light-hover: rgba(255, 255, 255, 0.15);
+
   /* Chat toggle (theme-specific, overridden by layout.tsx) */
   --chat-toggle-bg: #1F2937;
   --chat-toggle-color: #F9FAFB;
@@ -42,6 +54,7 @@
   --overlay-3xl: rgba(0, 0, 0, 0.92);
 
   /* Shadow colors */
+  --shadow-xs: rgba(0, 0, 0, 0.3);
   --shadow-sm: rgba(0, 0, 0, 0.35);
   --shadow-md: rgba(0, 0, 0, 0.4);
   --shadow-lg: rgba(0, 0, 0, 0.5);
@@ -215,14 +228,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn--outline-light {
   background: transparent;
-  color: #fff;
-  border: 2px solid rgba(255,255,255,0.7);
+  color: var(--hero-text);
+  border: 2px solid var(--btn-outline-light-border);
   backdrop-filter: blur(4px);
   transition: all var(--transition);
 }
 .btn--outline-light:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: #fff;
+  background: var(--btn-outline-light-hover);
+  border-color: var(--hero-text);
 }
 
 /* ── Section heading ─────────────────────────────────────── */

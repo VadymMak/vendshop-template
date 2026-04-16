@@ -16,7 +16,7 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.15));
+  background: linear-gradient(to top, var(--hero-overlay-bottom), var(--hero-overlay-mid) 60%, var(--overlay-sm));
 }
 
 .content {
@@ -30,10 +30,10 @@
 .panel {
   display: inline-block;
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--hero-panel-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   max-width: 100%;
 }
@@ -41,7 +41,7 @@
 .eyebrow {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: var(--hero-text-faint);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: var(--spacing-xs);
@@ -49,20 +49,20 @@
 
 .title {
   font-size: var(--font-size-3xl);
-  color: #fff;
+  color: var(--hero-text);
   line-height: 1.1;
   text-transform: uppercase;
   margin-bottom: var(--spacing-sm);
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  text-shadow: 0 2px 20px var(--shadow-md);
 }
 
 .sub {
   font-size: var(--font-size-lg);
-  color: rgba(255,255,255,0.92);
+  color: var(--hero-text-dim);
   max-width: 520px;
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
-  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 8px var(--shadow-xs);
 }
 
 .ctas {
