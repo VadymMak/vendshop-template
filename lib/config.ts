@@ -1,12 +1,12 @@
 import type { SiteConfig } from './types';
 
 export const SITE_CONFIG: SiteConfig = {
-  name: 'AutoFix',
-  tagline: 'Váš spoľahlivý autoservis',
+  name: 'Your Business',
+  tagline: '',
   templateType: 'services',
-  palette: 'professional',
+  palette: 'clean-light',
   language: 'sk',
-  headingFont: 'oswald',
-  whatsappNumber: '421321234567',
-  contactEmail: 'info@example.com',
+  headingFont: 'inter',
+  whatsappNumber: '',
+  contactEmail: '',
 };
