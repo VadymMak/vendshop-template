@@ -12,7 +12,7 @@ export default function ContactSection() {
         <ScrollReveal>
           <div className="section-header">
             <h2 className="section-title">{ui.contact.title}</h2>
-            <p className="section-subtitle">Nájdete nás tu alebo nám napíšte.</p>
+            <p className="section-subtitle">{ui.contact.subtitle}</p>
           </div>
         </ScrollReveal>
 
