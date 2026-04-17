@@ -143,3 +143,9 @@ export interface ImageMap {
   about: string;
   gallery: string[];
 }
+
+// Hero content
+export interface HeroContent {
+  title: string;
+  subtitle: string;
+}
