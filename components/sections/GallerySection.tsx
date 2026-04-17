@@ -17,7 +17,7 @@ export default function GallerySection() {
         </ScrollReveal>
 
         <div className={styles.grid}>
-          {IMAGES.gallery.map((src, i) => (
+          {IMAGES.gallery.map((src: string, i: number) => (
             <ScrollReveal
               key={i}
               delay={i * 80}
