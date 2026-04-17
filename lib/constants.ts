@@ -11,10 +11,19 @@ import type {
   DaySchedule,
   MenuCategory,
   ImageMap,
+  HeroContent,
 } from './types';
 
 // Switch to true when local /images/*.webp files are ready
 export const USE_LOCAL_IMAGES = false;
+
+// ---------------------------------------------------------------------------
+// HERO
+// ---------------------------------------------------------------------------
+export const HERO: HeroContent = {
+  title: '',
+  subtitle: '',
+};
 
 // ---------------------------------------------------------------------------
 // IMAGES
