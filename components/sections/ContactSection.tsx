@@ -25,7 +25,7 @@ export default function ContactSection() {
                   <div className={styles.icon}>{item.icon}</div>
                   <div>
                     <div className={styles.title}>{item.title}</div>
-                    {item.lines.map((line, j) => (
+                    {item.lines.map((line: string, j: number) => (
                       <div key={j} className={styles.line}>
                         {line}
                       </div>
