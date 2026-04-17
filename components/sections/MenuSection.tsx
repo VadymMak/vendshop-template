@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import { MENU_CATEGORIES } from '@/lib/constants';
+import { t } from '@/lib/get-ui-text';
 import styles from './MenuSection.module.css';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 
 export default function MenuSection() {
+  const ui = t();
   const [activeTab, setActiveTab] = useState(MENU_CATEGORIES[0]?.id ?? '');
 
   const activeCategory = MENU_CATEGORIES.find((c) => c.id === activeTab);
@@ -15,10 +17,8 @@ export default function MenuSection() {
       <div className="container">
         <ScrollReveal>
           <div className="section-header">
-            <h2 className="section-title">
-              Naše <span>Menu</span>
-            </h2>
-            <p className="section-subtitle">Čerstvé ingrediencie, tradičné recepty a moderná kuchyňa.</p>
+            <h2 className="section-title">{ui.menu.title}</h2>
+            <p className="section-subtitle">{ui.menu.subtitle}</p>
           </div>
         </ScrollReveal>
 
