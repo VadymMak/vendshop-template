@@ -17,7 +17,7 @@ export default function GallerySection() {
         </ScrollReveal>
 
         <div className={styles.grid}>
-          {IMAGES.gallery.map((src, i) => (
+          {IMAGES.gallery.map((src: string, i: number) => (
             <ScrollReveal
               key={i}
               delay={i * 80}
@@ -25,7 +25,7 @@ export default function GallerySection() {
             >
               <Image
                 src={src}
-                alt={`Galéria ${i + 1}`}
+                alt={`${ui.gallery.title} ${i + 1}`}
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

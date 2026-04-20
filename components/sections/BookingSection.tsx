@@ -47,10 +47,10 @@ export default function BookingSection() {
             <h2 className="section-title">{ui.booking.title}</h2>
             <p className="section-subtitle">{ui.booking.subtitle}</p>
             <ul className={styles.benefits}>
-              <li>✅ Rýchla odpoveď do 24 hodín</li>
-              <li>✅ Bez záväzkov — rezervácia je bezplatná</li>
-              <li>✅ Bezplatná cenová ponuka</li>
-              <li>✅ Flexibilné termíny</li>
+              <li>✅ {ui.booking.benefit1}</li>
+              <li>✅ {ui.booking.benefit2}</li>
+              <li>✅ {ui.booking.benefit3}</li>
+              <li>✅ {ui.booking.benefit4}</li>
             </ul>
           </ScrollReveal>
 
@@ -73,7 +73,6 @@ export default function BookingSection() {
                       name="name"
                       type="text"
                       className="form-control"
-                      placeholder="Ján Novák"
                       value={form.name}
                       onChange={handleChange}
                       required
@@ -86,7 +85,6 @@ export default function BookingSection() {
                       name="phone"
                       type="tel"
                       className="form-control"
-                      placeholder="+421 9XX XXX XXX"
                       value={form.phone}
                       onChange={handleChange}
                       required
@@ -105,7 +103,7 @@ export default function BookingSection() {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Vyberte službu...</option>
+                      <option value="">{ui.booking.selectService}</option>
                       {allServices.map((s) => (
                         <option key={s.id} value={s.name}>
                           {s.name}
@@ -127,13 +125,12 @@ export default function BookingSection() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Poznámka</label>
+                  <label htmlFor="message">{ui.booking.note}</label>
                   <textarea
                     id="message"
                     name="message"
                     className="form-control"
                     rows={3}
-                    placeholder="Opis problému, model vozidla..."
                     value={form.message}
                     onChange={handleChange}
                   />

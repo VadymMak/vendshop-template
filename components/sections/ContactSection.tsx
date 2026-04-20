@@ -12,7 +12,7 @@ export default function ContactSection() {
         <ScrollReveal>
           <div className="section-header">
             <h2 className="section-title">{ui.contact.title}</h2>
-            <p className="section-subtitle">Nájdete nás tu alebo nám napíšte.</p>
+            <p className="section-subtitle">{ui.contact.subtitle}</p>
           </div>
         </ScrollReveal>
 
@@ -25,7 +25,7 @@ export default function ContactSection() {
                   <div className={styles.icon}>{item.icon}</div>
                   <div>
                     <div className={styles.title}>{item.title}</div>
-                    {item.lines.map((line, j) => (
+                    {item.lines.map((line: string, j: number) => (
                       <div key={j} className={styles.line}>
                         {line}
                       </div>

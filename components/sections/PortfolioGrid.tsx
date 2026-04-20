@@ -24,7 +24,7 @@ export default function PortfolioGrid() {
         </ScrollReveal>
 
         <ScrollReveal delay={100} className={styles.grid}>
-          {allImages.map((src, i) => (
+          {allImages.map((src: string, i: number) => (
             <button
               key={i}
               className={styles.item}
