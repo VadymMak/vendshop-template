@@ -11,7 +11,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
   whyUs: { title: string; subtitle: string };
   booking: { title: string; subtitle: string; name: string; phone: string; service: string; date: string; submit: string; success: string };
   contact: { title: string; address: string; phone: string; email: string; hours: string };
-  footer: { rights: string; poweredBy: string };
+  footer: { rights: string; poweredBy: string; nav: string; contact: string; booking: string; bookingText: string; bookBtn: string; privacy: string; cookies: string };
   chat: { greeting: string; fallback: string };
   faq: { title: string };
 }> = {
@@ -26,7 +26,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Prečo my', subtitle: 'Profesionálny prístup ku každému klientovi.' },
     booking: { title: 'Rezervácia', subtitle: 'Objednajte sa online.', name: 'Meno', phone: 'Telefón', service: 'Služba', date: 'Dátum', submit: 'Odoslať', success: 'Ďakujeme! Ozveme sa vám.' },
     contact: { title: 'Kontakt', address: 'Adresa', phone: 'Telefón', email: 'E-mail', hours: 'Otváracie hodiny' },
-    footer: { rights: 'Všetky práva vyhradené.', poweredBy: 'Vytvorené cez' },
+    footer: { rights: 'Všetky práva vyhradené.', poweredBy: 'Vytvorené cez', nav: 'Navigácia', contact: 'Kontakt', booking: 'Rezervácia', bookingText: 'Rezervujte si termín online alebo nás kontaktujte priamo.', bookBtn: 'Rezervovať', privacy: 'Ochrana súkromia', cookies: 'Cookies' },
     chat: { greeting: 'Dobrý deň! Ako vám môžem pomôcť?', fallback: 'Ďakujeme za správu. Ozveme sa vám čo najskôr.' },
     faq: { title: 'Časté otázky' },
   },
@@ -41,7 +41,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Почему мы', subtitle: 'Профессиональный подход к каждому клиенту.' },
     booking: { title: 'Запись', subtitle: 'Запишитесь онлайн.', name: 'Имя', phone: 'Телефон', service: 'Услуга', date: 'Дата', submit: 'Отправить', success: 'Спасибо! Мы свяжемся с вами.' },
     contact: { title: 'Контакты', address: 'Адрес', phone: 'Телефон', email: 'E-mail', hours: 'Режим работы' },
-    footer: { rights: 'Все права защищены.', poweredBy: 'Создано с помощью' },
+    footer: { rights: 'Все права защищены.', poweredBy: 'Создано с помощью', nav: 'Навигация', contact: 'Контакты', booking: 'Бронирование', bookingText: 'Забронируйте онлайн или свяжитесь с нами.', bookBtn: 'Забронировать', privacy: 'Политика конфиденциальности', cookies: 'Cookies' },
     chat: { greeting: 'Здравствуйте! Чем могу помочь?', fallback: 'Спасибо за сообщение. Мы свяжемся с вами.' },
     faq: { title: 'Частые вопросы' },
   },
@@ -56,7 +56,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Why Us', subtitle: 'Professional approach to every client.' },
     booking: { title: 'Booking', subtitle: 'Book online.', name: 'Name', phone: 'Phone', service: 'Service', date: 'Date', submit: 'Submit', success: 'Thank you! We will contact you soon.' },
     contact: { title: 'Contact', address: 'Address', phone: 'Phone', email: 'Email', hours: 'Working hours' },
-    footer: { rights: 'All rights reserved.', poweredBy: 'Powered by' },
+    footer: { rights: 'All rights reserved.', poweredBy: 'Powered by', nav: 'Navigation', contact: 'Contact', booking: 'Booking', bookingText: 'Book online or contact us directly.', bookBtn: 'Book Now', privacy: 'Privacy Policy', cookies: 'Cookies' },
     chat: { greeting: 'Hello! How can I help you?', fallback: 'Thank you for your message. We will get back to you soon.' },
     faq: { title: 'FAQ' },
   },
@@ -71,7 +71,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Warum wir', subtitle: 'Professioneller Ansatz für jeden Kunden.' },
     booking: { title: 'Buchung', subtitle: 'Online buchen.', name: 'Name', phone: 'Telefon', service: 'Leistung', date: 'Datum', submit: 'Absenden', success: 'Vielen Dank! Wir melden uns bei Ihnen.' },
     contact: { title: 'Kontakt', address: 'Adresse', phone: 'Telefon', email: 'E-Mail', hours: 'Öffnungszeiten' },
-    footer: { rights: 'Alle Rechte vorbehalten.', poweredBy: 'Erstellt mit' },
+    footer: { rights: 'Alle Rechte vorbehalten.', poweredBy: 'Erstellt mit', nav: 'Navigation', contact: 'Kontakt', booking: 'Buchung', bookingText: 'Buchen Sie online oder kontaktieren Sie uns.', bookBtn: 'Buchen', privacy: 'Datenschutz', cookies: 'Cookies' },
     chat: { greeting: 'Hallo! Wie kann ich Ihnen helfen?', fallback: 'Danke für Ihre Nachricht. Wir melden uns bei Ihnen.' },
     faq: { title: 'Häufige Fragen' },
   },
@@ -86,7 +86,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Proč my', subtitle: 'Profesionální přístup ke každému klientovi.' },
     booking: { title: 'Rezervace', subtitle: 'Objednejte se online.', name: 'Jméno', phone: 'Telefon', service: 'Služba', date: 'Datum', submit: 'Odeslat', success: 'Děkujeme! Ozveme se vám.' },
     contact: { title: 'Kontakt', address: 'Adresa', phone: 'Telefon', email: 'E-mail', hours: 'Otevírací doba' },
-    footer: { rights: 'Všechna práva vyhrazena.', poweredBy: 'Vytvořeno pomocí' },
+    footer: { rights: 'Všechna práva vyhrazena.', poweredBy: 'Vytvořeno pomocí', nav: 'Navigace', contact: 'Kontakt', booking: 'Rezervace', bookingText: 'Rezervujte si termín online nebo nás kontaktujte přímo.', bookBtn: 'Rezervovat', privacy: 'Ochrana soukromí', cookies: 'Cookies' },
     chat: { greeting: 'Dobrý den! Jak vám mohu pomoci?', fallback: 'Děkuji za zprávu. Ozveme se vám co nejdříve.' },
     faq: { title: 'Časté dotazy' },
   },
@@ -101,7 +101,7 @@ export const UI_TRANSLATIONS: Record<SiteLanguage, {
     whyUs: { title: 'Чому ми', subtitle: 'Професійний підхід до кожного клієнта.' },
     booking: { title: 'Запис', subtitle: 'Запишіться онлайн.', name: "Ім'я", phone: 'Телефон', service: 'Послуга', date: 'Дата', submit: 'Відправити', success: "Дякуємо! Ми зв'яжемося з вами." },
     contact: { title: 'Контакти', address: 'Адреса', phone: 'Телефон', email: 'E-mail', hours: 'Графік роботи' },
-    footer: { rights: 'Всі права захищені.', poweredBy: 'Створено за допомогою' },
+    footer: { rights: 'Всі права захищені.', poweredBy: 'Створено за допомогою', nav: 'Навігація', contact: 'Контакти', booking: 'Бронювання', bookingText: 'Забронюйте онлайн або зв\'яжіться з нами.', bookBtn: 'Забронювати', privacy: 'Політика конфіденційності', cookies: 'Cookies' },
     chat: { greeting: 'Вітаю! Чим можу допомогти?', fallback: "Дякую за повідомлення. Ми зв'яжемося з вами." },
     faq: { title: 'Часті питання' },
   },

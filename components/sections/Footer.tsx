@@ -24,7 +24,7 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h4 className={styles.colTitle}>Navigácia</h4>
+          <h4 className={styles.colTitle}>{ui.footer.nav}</h4>
           <nav className={styles.links}>
             {NAV_ITEMS.map((item) => (
               <a key={item.href} href={item.href} className={styles.link}>
@@ -36,7 +36,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h4 className={styles.colTitle}>Kontakt</h4>
+          <h4 className={styles.colTitle}>{ui.footer.contact}</h4>
           <div className={styles.contactList}>
             {CONTACT_ITEMS.slice(0, 3).map((item, i) => (
               <div key={i} className={styles.contactRow}>
@@ -49,12 +49,10 @@ export default function Footer() {
 
         {/* CTA */}
         <div>
-          <h4 className={styles.colTitle}>Rezervácia</h4>
-          <p className={styles.ctaText}>
-            Rezervujte si termín online alebo nás kontaktujte priamo.
-          </p>
+          <h4 className={styles.colTitle}>{ui.footer.booking}</h4>
+          <p className={styles.ctaText}>{ui.footer.bookingText}</p>
           <a href="#booking" className={`btn btn--primary ${styles.ctaBtn}`}>
-            Rezervovať
+            {ui.footer.bookBtn}
           </a>
         </div>
       </div>
@@ -63,8 +61,8 @@ export default function Footer() {
         <div className="container">
           <span>© {year} {SITE_CONFIG.name}. {ui.footer.rights}</span>
           <div className={styles.bottomLinks}>
-            <a href="#">Ochrana súkromia</a>
-            <a href="#">Cookies</a>
+            <a href="#">{ui.footer.privacy}</a>
+            <a href="#">{ui.footer.cookies}</a>
           </div>
         </div>
       </div>
